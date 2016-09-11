@@ -9,29 +9,20 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
-    var a = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","1","2","3","4","5","6","7","8","9","10","!","?"]
-    let char = 10
-    let letters = NSCharacterSet.letterCharacterSet()
-    
-    var password = [String]()
 
+    var password = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        generatePassword(15)
+        generatePassword(12, punctuation: 2, numbers: 5, seperator: "", sepFreq: 0)
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    
-    func charSelector () -> String {
-        a.shuffle()
-        var char = a[0]
+    func charSelector (activeCharSet: Array<String>) -> String {
+        var shuffled = activeCharSet
+        shuffled.shuffle()
+        let char = shuffled[0]
+        let letters = NSCharacterSet.letterCharacterSet()
         let letterCheck = char.rangeOfCharacterFromSet(letters)
         if let letterTrue = letterCheck {
             let random = Int(arc4random_uniform(2))
@@ -42,23 +33,23 @@ class ViewController: UIViewController {
         return char
     }
     
-    func generatePassword (length: Int) -> String {
+    func generatePassword (length: Int, punctuation: Int, numbers: Int, seperator: String, sepFreq: Int) -> String {
+        let setA = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","1","2","3","4","5","6","7","8","9","10","!","?"]
+        let setB = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","1","2","3","4","5","6","7","8","9","10"]
+        let setC = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+        var charSet = [String]()
+        if punctuation == 0 && numbers == 0 { charSet = setC }
+        else if punctuation == 0 && numbers != 0 { charSet = setB }
+        else { charSet = setA }
+        
+        
         var currentCharacter = 0
         var password = ""
         while currentCharacter < length {
             currentCharacter = currentCharacter + 1
-            password = password + charSelector()
+            password = password + charSelector(charSet)
         }
         print(password)
         return password
     }
-    
-    
-    
-    
-    
-
-
-
 }
-
