@@ -10,11 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    var password = [String]()
+    @IBOutlet weak var passwordDisplay: UILabel!
+    @IBOutlet weak var passwordButton: NSLayoutConstraint!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        generatePassword(12, punctuation: 2, numbers: 5, seperator: "", sepFreq: 0)
+        let password = generatePassword(12, punctuation: 2, numbers: 5, seperator: "", sepFreq: 0)
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -33,6 +35,10 @@ class ViewController: UIViewController {
         return char
     }
     
+    @IBAction func generatePassword(sender: AnyObject) {
+    }
+    
+    
     func generatePassword (length: Int, punctuation: Int, numbers: Int, seperator: String, sepFreq: Int) -> String {
         let setA = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","1","2","3","4","5","6","7","8","9","10","!","?"]
         let setB = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","1","2","3","4","5","6","7","8","9","10"]
@@ -50,6 +56,7 @@ class ViewController: UIViewController {
             password = password + charSelector(charSet)
         }
         print(password)
+        passwordDisplay.text = password
         return password
     }
 }
