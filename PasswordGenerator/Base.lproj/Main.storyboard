@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ga-DO-eAG">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ga-DO-eAG">
                                 <rect key="frame" x="203" y="363" width="195" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="WCR-IY-v5y"/>
@@ -30,8 +30,11 @@
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="8" minValue="1" maxValue="20" translatesAutoresizingMaskIntoConstraints="NO" id="PXI-uX-QYS">
                                 <rect key="frame" x="78" y="131" width="444" height="31"/>
+                                <connections>
+                                    <action selector="sliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="CWZ-tq-dGH"/>
+                                </connections>
                             </slider>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="13" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0s3-cy-aFL">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0s3-cy-aFL">
                                 <rect key="frame" x="278" y="171" width="45" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="l1u-SY-EmZ"/>
@@ -74,8 +77,10 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="lengthSlider" destination="PXI-uX-QYS" id="29w-nc-t2y"/>
                         <outlet property="passwordButton" destination="I1X-Iq-VId" id="37x-xb-azf"/>
                         <outlet property="passwordDisplay" destination="3ga-DO-eAG" id="6wS-js-0lG"/>
+                        <outlet property="sliderDisplay" destination="0s3-cy-aFL" id="c7r-w5-xhK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -12,10 +12,13 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var passwordDisplay: UILabel!
     @IBOutlet weak var passwordButton: NSLayoutConstraint!
+    @IBOutlet weak var lengthSlider: UISlider!
+    @IBOutlet weak var sliderDisplay: UILabel!
+    
+    var charLength = Int()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let password = generatePassword(12, punctuation: 2, numbers: 5, seperator: "", sepFreq: 0)
         
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -35,7 +38,17 @@ class ViewController: UIViewController {
         return char
     }
     
+    @IBAction func sliderValueChanged(sender: UISlider) {
+        var currentValue = Int(sender.value)
+        charLength = currentValue
+        
+        sliderDisplay.text = "\(currentValue)"
+    }
+    
+    
     @IBAction func generatePassword(sender: AnyObject) {
+        let password = generatePassword(charLength, punctuation: 2, numbers: 5, seperator: "", sepFreq: 0)
+
     }
     
     
