@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  PasswordViewViewController.swift
 //  PasswordGenerator
 //
 //  Created by Daniel Robertson on 10/09/2016.
@@ -8,14 +8,14 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class PasswordViewViewController: UIViewController {
 
     @IBOutlet weak var passwordDisplay: UILabel!
     @IBOutlet weak var passwordButton: NSLayoutConstraint!
     @IBOutlet weak var lengthSlider: UISlider!
     @IBOutlet weak var sliderDisplay: UILabel!
     
-    var charLength = Int()
+    var charLength = 8
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +43,7 @@ class ViewController: UIViewController {
         charLength = currentValue
         
         sliderDisplay.text = "\(currentValue)"
+        let password = generatePassword(charLength, punctuation: 2, numbers: 5, seperator: "", sepFreq: 0)
     }
     
     
