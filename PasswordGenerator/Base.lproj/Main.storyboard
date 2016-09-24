@@ -6,6 +6,47 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Passwords Collection View Controller-->
+        <scene sceneID="NTw-fo-el0">
+            <objects>
+                <viewController id="xQD-vQ-dtu" customClass="PasswordsCollectionViewController" customModule="PasswordGenerator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eVC-zq-l4Q"/>
+                        <viewControllerLayoutGuide type="bottom" id="f4h-tm-1Pu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SqH-UH-6Y2">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C4N-o4-Hty">
+                                <rect key="frame" x="441" y="28" width="139" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="51" id="Jhq-6a-Vjq"/>
+                                </constraints>
+                                <state key="normal" title="New Password"/>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kFB-I6-DMK">
+                                <rect key="frame" x="20" y="113" width="560" height="467"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="kFB-I6-DMK" firstAttribute="centerX" secondItem="SqH-UH-6Y2" secondAttribute="centerX" id="0GI-cx-A02"/>
+                            <constraint firstItem="kFB-I6-DMK" firstAttribute="top" secondItem="C4N-o4-Hty" secondAttribute="bottom" constant="34" id="0an-sc-qhe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="C4N-o4-Hty" secondAttribute="trailing" id="6MT-Ag-VLz"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="kFB-I6-DMK" secondAttribute="leading" id="9lZ-Wb-Scb"/>
+                            <constraint firstItem="C4N-o4-Hty" firstAttribute="leading" secondItem="SqH-UH-6Y2" secondAttribute="leadingMargin" constant="421" id="Alr-db-Ba2"/>
+                            <constraint firstItem="C4N-o4-Hty" firstAttribute="top" secondItem="eVC-zq-l4Q" secondAttribute="bottom" constant="8" id="Mr2-yp-M4E"/>
+                            <constraint firstItem="f4h-tm-1Pu" firstAttribute="top" secondItem="kFB-I6-DMK" secondAttribute="bottom" constant="20" id="mFH-cv-nVi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="kFB-I6-DMK" secondAttribute="trailing" id="t4o-F3-Udr"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e3U-t0-rpR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-306" y="315"/>
+        </scene>
         <!--Password View View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -19,10 +60,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ga-DO-eAG">
-                                <rect key="frame" x="203" y="363" width="195" height="31"/>
+                                <rect key="frame" x="80" y="363" width="440" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="WCR-IY-v5y"/>
-                                    <constraint firstAttribute="width" constant="195" id="azG-oo-xGn"/>
+                                    <constraint firstAttribute="width" constant="440" id="azG-oo-xGn"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>

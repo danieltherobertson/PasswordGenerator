@@ -39,11 +39,14 @@ class PasswordViewViewController: UIViewController {
     }
     
     @IBAction func sliderValueChanged(sender: UISlider) {
-        var currentValue = Int(sender.value)
+        let oldValue = charLength
+        let currentValue = Int(sender.value)
         charLength = currentValue
         
         sliderDisplay.text = "\(currentValue)"
-        let password = generatePassword(charLength, punctuation: 2, numbers: 5, seperator: "", sepFreq: 0)
+        if oldValue != currentValue {
+            let password = generatePassword(charLength, punctuation: 2, numbers: 5, seperator: "", sepFreq: 0)
+        }
     }
     
     
